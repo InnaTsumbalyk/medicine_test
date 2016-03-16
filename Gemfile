@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'quiet_assets', group: :development
 
-gem 'thin' 
+gem 'thin'
 
 # gem 'unicorn'
 gem 'devise'
@@ -54,5 +54,16 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'capistrano', require: false
+  # gem 'capistrano3-unicorn'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm', require: false
+  gem 'capistrano-faster-assets', '~> 1.0'
+end
+
+group :production do
+  gem 'unicorn'
 end
 

@@ -17,3 +17,5 @@
 
 config/database.yml
 db/schema.rb
+/config/deploy/
+/shared/
