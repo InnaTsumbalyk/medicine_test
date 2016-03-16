@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :repo_url, 'git@gitlab.com:inna_tsumbaluk/medicine.git'
+set :repo_url, 'git@github.com:InnaTsumbalyk/medicine_test.git'
 set :application, 'medicine'
 application = 'medicine'
 set :rvm_type, :user
@@ -49,6 +49,8 @@ namespace :deploy do
   task :restart do
     # invoke 'unicorn:stop'
     # invoke 'unicorn:start'
+    sudo "service unicorn_#{application} stop"
+    sudo "service unicorn_#{application} start"
   end
 
   task :restart_nginx_config do
