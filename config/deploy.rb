@@ -75,7 +75,7 @@ namespace :deploy do
 
   after :updating, 'deploy:symlink'
 
-  before :setup, 'bundler:install'
   before :setup, 'deploy:starting'
   before :setup, 'deploy:updating'
+  before :setup, 'bundler:install'
 end
